@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(138, 55, 138);
+  color: white;
+}
+.queryContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+p {
+  padding: .5em;
+}
