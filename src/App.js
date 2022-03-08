@@ -38,26 +38,179 @@ function App() {
           designated as an FDR.
         </p>
         <p>
-          In general, vendors that are
+          In general, vendors that are{" "}
           <b style={{ textDecoration: "underline" }}>NOT</b> FDRs include
-          restaurants, office supplies, m e m b e r giveaways, paper shredding
+          restaurants, office supplies, member giveaways, paper shredding
           vendors, computer hardware and most software, rental car companies,
           furniture suppliers, event sponsors, trophy and awards vendors,
           construction and repair vendors, and organizations that provide
-          training and videos. This is <b style={{ textDecoration: "underline" }}>NOT</b> an exhaustive list.
+          training and videos. This is{" "}
+          <b style={{ textDecoration: "underline" }}>NOT</b> an exhaustive list.
         </p>
         <p>
-          In general, vendors that <b style={{ textDecoration: "underline" }}>ARE</b> FDRs have direct contact with our members
-          via in-person engagements, telephone, surveys, or sales agents taking
-          enrollment applications. FDRs may have member data (i.e., enrollment
-          and clinical information) that is used to perform a function that
-          would otherwise be conducted by CNC-NC. FDRs usually make decisions on
-          behalf of CNC-NC and perform functions that CNC-NC is required to
-          undertake based on our agreement with CMS. For example, Beacon
-          processes Part C medical claims and enrollment applications, which
-          makes it an FDR.
+          In general, vendors that{" "}
+          <b style={{ textDecoration: "underline" }}>ARE</b> FDRs have direct
+          contact with our members via in-person engagements, telephone,
+          surveys, or sales agents taking enrollment applications. FDRs may have
+          member data (i.e., enrollment and clinical information) that is used
+          to perform a function that would otherwise be conducted by CNC-NC.
+          FDRs usually make decisions on behalf of CNC-NC and perform functions
+          that CNC-NC is required to undertake based on our agreement with CMS.
+          For example, Beacon processes Part C medical claims and enrollment
+          applications, which makes it an FDR.
         </p>
+        <p>
+          All fields{" "}
+          <b style={{ textDecoration: "underline" }}>must be completed</b> prior
+          to submission to:{" "}
+          <b style={{ textDecoration: "underline", color: "blue" }}>
+            Contracts@healthteamadvantage.com
+          </b>
+          . Please also include the proposed vendor agreement, statement of work
+          or terms and conditions.
+        </p>
+        <p>
+          <b>Required Information</b>
+        </p>
+        <div style={{ display: "flex" }}>
+          <div className="flex33">
+            <label>CNC-NC Requestor Name</label>
+          </div>
+          <div className="flex33">
+            <label>Today’s Date</label>
+          </div>
+          <div className="flex33">
+            <label>Date Service to Begin</label>
+          </div>
+        </div>
+        <div style={{ display: "flex", marginTop: "10px" }}>
+          <div className="flex33">
+            <input type="text" name="cnc-nc-requestername" />
+          </div>
+          <div className="flex33">
+            <input type="date" name="todayDate" />
+          </div>
+          <div className="flex33">
+            <input type="date" name="dateServiceToBegin" />
+          </div>
+        </div>
+        <div style={{ display: "flex", marginTop: "10px" }}>
+          <div className="flex33">
+            <label>Contract Property</label>
+          </div>
+          <div className="flex33">
+            <label>
+              Critical Date(s) Before
+              <br />
+              Service to Begin
+            </label>
+          </div>
+          <div className="flex33">
+            <label>FDR/Non-FDR</label>
+          </div>
+        </div>
+        <div style={{ display: "flex", marginTop: "10px" }}>
+          <div className="flex33">
+            <select>
+              <option value="" disabled>
+                Select
+              </option>
+              <option value="Low (3 Months)">Low (3 Months)</option>
+              <option value="Medium (2 Months)">Medium (2 Months)</option>
+              <option value="High (1 Months)">High (1 Months)</option>
+              <option value="Critical (2 Weeks)">Critical (2 Weeks)</option>
+            </select>
+          </div>
+          <div className="flex33">
+            <input type="date" name="todayDate" />
+          </div>
+          <div className="flex33">
+            <select>
+              <option value="" disabled>
+                Select
+              </option>
+              <option value="FDR">FDR</option>
+              <option value="Non-FDR">Non-FDR</option>
+            </select>
+          </div>
+        </div>
       </div>
+      <br />
+      <hr />
+      <p>CNC-NC Confidential</p>
+      <br />
+      <br />
+      <br />
+      <div className="topHeading">
+        Care N’ Care Insurance Company of North Carolina (“CNC-NC”), Inc.
+        Contract Request Intake Form (v. 3.0)
+      </div>
+      <hr />
+      <div style={{ display: "flex" }}>
+        <div className="flex33">
+          <label>Will Service Require IT Review</label>
+        </div>
+        <div className="flex33">
+          <label>Vendor Contact Name</label>
+        </div>
+        <div className="flex33">
+          <label>Vendor Contact Email</label>
+        </div>
+      </div>
+      <div style={{ display: "flex", marginTop: "10px" }}>
+        <div className="flex33">
+          <select>
+            <option value="" disabled>
+              Select
+            </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div className="flex33">
+          <input type="text" name="todayDate" />
+        </div>
+        <div className="flex33">
+          <input type="email" name="todayDate" />
+        </div>
+      </div>
+      <div style={{ marginTop: "10px" }}>
+        <label>Vendor Full Legal Name and Mailing Address</label>
+      </div>
+      <div style={{ marginTop: "10px" }}>
+        <input type={"text"} style={{ width: "100%" }} />
+      </div>
+      <div style={{ marginTop: "10px" }}>
+        <label>
+          Briefly describe the function(s) to be performed by the vendor.
+        </label>
+      </div>
+      <div style={{ marginTop: "10px" }}>
+        <textarea />
+      </div>
+      <br />
+      <hr />
+      <p>CNC-NC Confidential</p>
+      <br />
+      <br />
+      <br />
+      <div className="topHeading">
+        Care N’ Care Insurance Company of North Carolina (“CNC-NC”), Inc.
+        Contract Request Intake Form (v. 3.0)
+      </div>
+      <hr />
+      <div>
+        <label>Does this service or product exceed $10,000?</label>
+      </div>
+      <div style={{display:"flex"}}>
+        <div className="flex10">
+          <input type="radio" value="Yes" name='serviceRate' /> Yes
+        </div>
+        <div className="flex10">
+          <input type="radio" value="No" name='serviceRate' /> No
+        </div>
+      </div>
+      <p>Please complete the following survey questions regarding the proposed vendor’s services.</p>
     </div>
   );
 }
