@@ -1,7 +1,106 @@
 import "./1.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function App() {
+  const [checkBoxArr, setcheckBoxArr] = useState([
+    {
+      label: "Have members personal information, such as name, address, etc.?",
+    },
+    {
+      label: "Have members medical information?",
+    },
+    {
+      label: "Contact members via written correspondence?",
+    },
+    {
+      label: "Contact members via telephone?",
+    },
+    {
+      label: "Contact members in-person?",
+    },
+    {
+      label: "Mail information to members?",
+    },
+    {
+      label: "Interact with members to improve their quality of health?",
+    },
+    {
+      label: "Make decisions on behalf of CNC-NC?",
+    },
+    {
+      label:
+        "Take direction from CNC-NC regarding any decisions that need to be made?",
+    },
+    {
+      label: "Perform a “one-time” service for CNC-NC?",
+    },
+    {
+      label: "Perform an “on-demand” services for CNC-NC?",
+    },
+  ]);
+
+  const [checkBoxArr1, setcheckBoxArr1] = useState([
+    {
+      label: "Debarment Screening Completed?",
+    },
+    {
+      label: "Exclusion Screening Completed?",
+    },
+    {
+      label: "Is the vendor an FDR?",
+    },
+    {
+      label: "If FDR, has Code of Conduct been sent?",
+    },
+    {
+      label: "Was an entry made the in the Contracts Library for the vendor?",
+    },
+  ]);
+
+  const [cnc_nc_requestername, setcnc_nc_requestername] = useState("");
+  const [todayDate, settodayDate] = useState("");
+  const [dateServiceToBegin, setdateServiceToBegin] = useState("");
+  const [contractProperty, setcontractProperty] = useState("");
+  const [criticalDate, setcriticalDate] = useState("");
+  const [fdrType, setfdrType] = useState("");
+  const [serviceRequire, setserviceRequire] = useState("");
+  const [vendorContactName, setvendorContactName] = useState("");
+  const [vendorContactEmail, setvendorContactEmail] = useState("");
+  const [vendorLegalName, setvendorLegalName] = useState("");
+  const [vendorFunctions, setvendorFunctions] = useState("");
+  const [serviceCharge, setserviceCharge] = useState("");
+
+  const userChecked = (index, value) => {
+    let tempArr = JSON.parse(JSON.stringify(checkBoxArr));
+    tempArr[index]["value"] = value;
+    setcheckBoxArr(tempArr);
+  };
+  const userChecked1 = (index, value) => {
+    let tempArr = JSON.parse(JSON.stringify(checkBoxArr1));
+    tempArr[index]["value"] = value;
+    setcheckBoxArr1(tempArr);
+  };
+
+  const handleSubmit = () => {
+    console.log("cnc_nc_requestername",cnc_nc_requestername)
+    console.log("todayDate",todayDate)
+    console.log("dateServiceToBegin",dateServiceToBegin)
+    console.log("contractProperty",contractProperty)
+    console.log("criticalDate",criticalDate)
+    console.log("fdrType",fdrType)
+    console.log("serviceRequire",serviceRequire)
+    console.log("vendorContactName",vendorContactName)
+    console.log("vendorContactEmail",vendorContactEmail)
+    console.log("vendorLegalName",vendorLegalName)
+
+    console.log("vendorLegalName",vendorLegalName)
+    console.log("vendorFunctions",vendorFunctions)
+    console.log("serviceCharge",serviceCharge)
+
+    console.log("checkBoxArr",checkBoxArr)
+    console.log("checkBoxArr1",checkBoxArr1)
+  };
+
   return (
     <div className="mainContainer">
       <div className="topHeading">
@@ -85,13 +184,28 @@ function App() {
         </div>
         <div style={{ display: "flex", marginTop: "10px" }}>
           <div className="flex33">
-            <input type="text" name="cnc-nc-requestername" />
+            <input
+              type="text"
+              value={cnc_nc_requestername}
+              name="cnc_nc_requestername"
+              onChange={(e) => setcnc_nc_requestername(e.target.value)}
+            />
           </div>
           <div className="flex33">
-            <input type="date" name="todayDate" />
+            <input
+              type="date"
+              onChange={(e) => settodayDate(e.target.value)}
+              value={todayDate}
+              name="todayDate"
+            />
           </div>
           <div className="flex33">
-            <input type="date" name="dateServiceToBegin" />
+            <input
+              type="date"
+              value={dateServiceToBegin}
+              name="dateServiceToBegin"
+              onChange={(e) => setdateServiceToBegin(e.target.value)}
+            />
           </div>
         </div>
         <div style={{ display: "flex", marginTop: "10px" }}>
@@ -111,7 +225,11 @@ function App() {
         </div>
         <div style={{ display: "flex", marginTop: "10px" }}>
           <div className="flex33">
-            <select>
+            <select
+              value={contractProperty}
+              name="contractProperty"
+              onChange={(e) => setcontractProperty(e.target.value)}
+            >
               <option value="" disabled>
                 Select
               </option>
@@ -122,10 +240,19 @@ function App() {
             </select>
           </div>
           <div className="flex33">
-            <input type="date" name="todayDate" />
+            <input
+              type="date"
+              value={criticalDate}
+              name="criticalDate"
+              onChange={(e) => setcriticalDate(e.target.value)}
+            />
           </div>
           <div className="flex33">
-            <select>
+            <select
+              value={fdrType}
+              name="fdrType"
+              onChange={(e) => setfdrType(e.target.value)}
+            >
               <option value="" disabled>
                 Select
               </option>
@@ -159,7 +286,11 @@ function App() {
       </div>
       <div style={{ display: "flex", marginTop: "10px" }}>
         <div className="flex33">
-          <select>
+          <select
+            value={serviceRequire}
+            onChange={(e) => setserviceRequire(e.target.value)}
+            name="serviceRequire"
+          >
             <option value="" disabled>
               Select
             </option>
@@ -168,17 +299,33 @@ function App() {
           </select>
         </div>
         <div className="flex33">
-          <input type="text" name="todayDate" />
+          <input
+            type="text"
+            onChange={(e) => setvendorContactName(e.target.value)}
+            value={vendorContactName}
+            name="vendorContactName"
+          />
         </div>
         <div className="flex33">
-          <input type="email" name="todayDate" />
+          <input
+            type="email"
+            onChange={(e) => setvendorContactEmail(e.target.value)}
+            value={vendorContactEmail}
+            name="vendorContactEmail"
+          />
         </div>
       </div>
       <div style={{ marginTop: "10px" }}>
         <label>Vendor Full Legal Name and Mailing Address</label>
       </div>
       <div style={{ marginTop: "10px" }}>
-        <input type={"text"} style={{ width: "100%" }} />
+        <input
+          type={"text"}
+          style={{ width: "100%" }}
+          value={vendorLegalName}
+          onChange={(e) => setvendorLegalName(e.target.value)}
+          name="vendorLegalName"
+        />
       </div>
       <div style={{ marginTop: "10px" }}>
         <label>
@@ -186,7 +333,11 @@ function App() {
         </label>
       </div>
       <div style={{ marginTop: "10px" }}>
-        <textarea />
+        <textarea
+          onChange={(e) => setvendorFunctions(e.target.value)}
+          value={vendorFunctions}
+          name="vendorFunctions"
+        />
       </div>
       <br />
       <hr />
@@ -199,35 +350,121 @@ function App() {
         Contract Request Intake Form (v. 3.0)
       </div>
       <hr />
-      <div>
-        <label>Does this service or product exceed $10,000?</label>
-      </div>
-      <div style={{display:"flex"}}>
-        <div className="flex10">
-          <input type="radio" value="Yes" name='serviceRate' /> Yes
+      <div className="thirdPage">
+        <div>
+          <label>Does this service or product exceed $10,000?</label>
         </div>
-        <div className="flex10">
-          <input type="radio" value="No" name='serviceRate' /> No
+        <div style={{ display: "flex", padding: "0px 200px" }}>
+          <div style={{ flexBasis: "40%" }}>
+            <input
+              onChange={(e) => setserviceCharge("Yes")}
+              type="radio"
+              value={serviceCharge}
+              name="serviceCharge"
+            />{" "}
+            Yes
+          </div>
+          <div style={{ flexBasis: "40%" }}>
+            <input
+              onChange={(e) => setserviceCharge("No")}
+              type="radio"
+              value={serviceCharge}
+              name="serviceCharge"
+            />{" "}
+            No
+          </div>
         </div>
+        <p>
+          Please complete the following survey questions regarding the proposed
+          vendor’s services.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Vendor will ...</th>
+              <th>Yes</th>
+              <th>No</th>
+            </tr>
+          </thead>
+          <tbody>
+            {checkBoxArr &&
+              checkBoxArr.map((x, i) => {
+                return (
+                  <tr key={i}>
+                    <td>{x.label}</td>
+                    <td>
+                      <input
+                        type="radio"
+                        value={x["value"]}
+                        onChange={(e) => userChecked(i, "Yes")}
+                        name={i}
+                      />{" "}
+                      Yes
+                    </td>
+                    <td>
+                      <input
+                        type="radio"
+                        value={x["value"]}
+                        onChange={(e) => userChecked(i, "No")}
+                        name={i}
+                      />{" "}
+                      No
+                    </td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
+        <h3>COMPLIANCE STAFF ONLY – COMPLETE</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Vendor</th>
+              <th>Yes</th>
+              <th>No</th>
+            </tr>
+          </thead>
+          <tbody>
+            {checkBoxArr1 &&
+              checkBoxArr1.map((x, i) => {
+                return (
+                  <tr key={i}>
+                    <td>{x.label}</td>
+                    <td>
+                      <input
+                        type="radio"
+                        value={x["value"]}
+                        onChange={(e) => userChecked1(i, "Yes")}
+                        name={i}
+                      />{" "}
+                      Yes
+                    </td>
+                    <td>
+                      <input
+                        type="radio"
+                        value={x["value"]}
+                        onChange={(e) => userChecked1(i, "No")}
+                        name={i}
+                      />{" "}
+                      No
+                    </td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
+        <button
+          type="button"
+          className="buttonSubmit"
+          onClick={() => handleSubmit()}
+        >
+          Submit
+        </button>
+        <br />
+        <br />
       </div>
-      <p>Please complete the following survey questions regarding the proposed vendor’s services.</p>
     </div>
   );
 }
 
 export default App;
-
-// Gender
-// Male name = "gender"
-// Female name = "gender"
-
-// each post should contain
-// details regrading the post, created at, userId
-
-// nodejs
-
-// reactjs is divided into 2 parts
-
-// one is static -> npm run build -> move build folder to cloud/hosting/aws/ : what we learnt above // not suitable for seo
-// anohter one is server side -> npm run start in the cloud : Nextjs, gatsby. - very good for application having more than 50 pages to avoid multiple deployments
-// ssr : server side rendering is goood for seo also
