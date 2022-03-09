@@ -82,23 +82,23 @@ function App() {
   };
 
   const handleSubmit = () => {
-    console.log("cnc_nc_requestername",cnc_nc_requestername)
-    console.log("todayDate",todayDate)
-    console.log("dateServiceToBegin",dateServiceToBegin)
-    console.log("contractProperty",contractProperty)
-    console.log("criticalDate",criticalDate)
-    console.log("fdrType",fdrType)
-    console.log("serviceRequire",serviceRequire)
-    console.log("vendorContactName",vendorContactName)
-    console.log("vendorContactEmail",vendorContactEmail)
-    console.log("vendorLegalName",vendorLegalName)
+    console.log("cnc_nc_requestername", cnc_nc_requestername);
+    console.log("todayDate", todayDate);
+    console.log("dateServiceToBegin", dateServiceToBegin);
+    console.log("contractProperty", contractProperty);
+    console.log("criticalDate", criticalDate);
+    console.log("fdrType", fdrType);
+    console.log("serviceRequire", serviceRequire);
+    console.log("vendorContactName", vendorContactName);
+    console.log("vendorContactEmail", vendorContactEmail);
+    console.log("vendorLegalName", vendorLegalName);
 
-    console.log("vendorLegalName",vendorLegalName)
-    console.log("vendorFunctions",vendorFunctions)
-    console.log("serviceCharge",serviceCharge)
+    console.log("vendorLegalName", vendorLegalName);
+    console.log("vendorFunctions", vendorFunctions);
+    console.log("serviceCharge", serviceCharge);
 
-    console.log("checkBoxArr",checkBoxArr)
-    console.log("checkBoxArr1",checkBoxArr1)
+    console.log("checkBoxArr", checkBoxArr);
+    console.log("checkBoxArr1", checkBoxArr1);
   };
 
   return (
